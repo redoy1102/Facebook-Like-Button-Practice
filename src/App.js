@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+// import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 
 function App() {
+  const [likeColor, setLikeColor] = useState('');
+  const iconStyle = {
+    height:'200px',
+    width:'200px',
+    margin:'200px',
+    marginLeft:'600px',
+    cursor:'pointer', 
+    
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <AccessAlarmIcon style={iconStyle} ></AccessAlarmIcon> */}
+      <ThumbUpAltIcon onClick={() => setLikeColor(likeColor ? '' : 'primary')} color={likeColor} style={iconStyle} ></ThumbUpAltIcon>
     </div>
   );
 }
